@@ -212,8 +212,9 @@ Product Categories
 Wishlist Management
 Order Cancellation
 Refund Processing
+
 Author
-Poorvika
+Poorvika HR
 
 E-Commerce Cart & Checkout Module
 
