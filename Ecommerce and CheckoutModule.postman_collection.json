@@ -11,7 +11,7 @@
       "name": "Ecommerce_Postman_Collection.json Copy",
       "item": [
         {
-          "name": "New Request",
+          "name": "Get Cart By User Id",
           "protocolProfileBehavior": {
             "disableBodyPruning": true
           },
@@ -45,7 +45,7 @@
           "response": []
         },
         {
-          "name": "New Request",
+          "name": "Add Product To Cart - Mobile",
           "request": {
             "method": "POST",
             "header": [],
@@ -75,7 +75,7 @@
           "response": []
         },
         {
-          "name": "New Request",
+          "name": "Add Product To Cart - Keyboard",
           "request": {
             "method": "POST",
             "header": [],
@@ -105,7 +105,7 @@
           "response": []
         },
         {
-          "name": "New Request",
+          "name": "Add Product To Cart - Mouse",
           "request": {
             "method": "POST",
             "header": [],
@@ -135,7 +135,7 @@
           "response": []
         },
         {
-          "name": "New Request",
+          "name": "View Cart After Additions",
           "request": {
             "method": "GET",
             "header": [],
@@ -157,7 +157,7 @@
           "response": []
         },
         {
-          "name": "New Request",
+          "name": "Update Cart Item Quantity",
           "request": {
             "method": "PUT",
             "header": [],
@@ -187,7 +187,7 @@
           "response": []
         },
         {
-          "name": "New Request",
+          "name": "Patch Cart Item Quantity",
           "request": {
             "method": "PATCH",
             "header": [],
@@ -215,7 +215,7 @@
           "response": []
         },
         {
-          "name": "New Request",
+          "name": "Apply Coupon - SAVE10",
           "request": {
             "method": "POST",
             "header": [],
@@ -245,7 +245,7 @@
           "response": []
         },
         {
-          "name": "New Request",
+          "name": "Apply Coupon - FLAT500",
           "request": {
             "method": "POST",
             "header": [],
@@ -275,7 +275,7 @@
           "response": []
         },
         {
-          "name": "New Request",
+          "name": "Apply Expired Coupon - OLD10",
           "request": {
             "method": "POST",
             "header": [],
@@ -305,7 +305,7 @@
           "response": []
         },
         {
-          "name": "New Request",
+          "name": "Apply Inactive Coupon - INACTIVE500",
           "request": {
             "method": "POST",
             "header": [],
@@ -335,7 +335,7 @@
           "response": []
         },
         {
-          "name": "New Request",
+          "name": "Checkout Success - SAVE10",
           "request": {
             "method": "POST",
             "header": [],
@@ -364,7 +364,7 @@
           "response": []
         },
         {
-          "name": "New Request",
+          "name": "Add Product To Cart Before Second Checkout",
           "request": {
             "method": "POST",
             "header": [],
@@ -394,7 +394,7 @@
           "response": []
         },
         {
-          "name": "New Request",
+          "name": "Checkout Success - No Coupon",
           "request": {
             "method": "POST",
             "header": [],
@@ -423,7 +423,7 @@
           "response": []
         },
         {
-          "name": "New Request",
+          "name": "Checkout With SAVE10 Again",
           "request": {
             "method": "POST",
             "header": [],
@@ -484,7 +484,7 @@
           "response": []
         },
         {
-          "name": "New Request",
+          "name": "Get Order History By User Id",
           "request": {
             "method": "POST",
             "header": [],
@@ -514,7 +514,7 @@
           "response": []
         },
         {
-          "name": "New Request",
+          "name": "Product Not Found",
           "request": {
             "method": "POST",
             "header": [],
@@ -544,7 +544,7 @@
           "response": []
         },
         {
-          "name": "New Request",
+          "name": "User Not Found",
           "request": {
             "method": "GET",
             "header": [],
@@ -594,7 +594,7 @@
           "response": []
         },
         {
-          "name": "New Request",
+          "name": "Order Not Found",
           "request": {
             "method": "GET",
             "header": [],
@@ -616,7 +616,7 @@
           "response": []
         },
         {
-          "name": "New Request",
+          "name": "Checkout Empty Cart",
           "request": {
             "method": "PUT",
             "header": [],
@@ -646,7 +646,7 @@
           "response": []
         },
         {
-          "name": "New Request",
+          "name": "Cart Not Found",
           "request": {
             "method": "DELETE",
             "header": [],
@@ -667,7 +667,7 @@
           "response": []
         },
         {
-          "name": "New Request",
+          "name": "Update Invalid Cart Item",
           "request": {
             "method": "POST",
             "header": [],
@@ -697,7 +697,7 @@
           "response": []
         },
         {
-          "name": "New Request",
+          "name": "Delete Invalid Cart Item",
           "request": {
             "method": "POST",
             "header": [],
@@ -727,7 +727,7 @@
           "response": []
         },
         {
-          "name": "New Request",
+          "name": "Coupon Not Found",
           "request": {
             "method": "POST",
             "header": [],
@@ -756,7 +756,7 @@
           "response": []
         },
         {
-          "name": "New Request",
+          "name": "Invalid Quantity Update",
           "request": {
             "method": "PUT",
             "header": [],
@@ -786,7 +786,7 @@
           "response": []
         },
         {
-          "name": "New Request",
+          "name": "Order Pagination Test",
           "request": {
             "method": "GET",
             "header": [],
@@ -818,7 +818,7 @@
           "response": []
         },
         {
-          "name": "New Request",
+          "name": " Delete Cart Item",
           "request": {
             "method": "DELETE",
             "header": [],
