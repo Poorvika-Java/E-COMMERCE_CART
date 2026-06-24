@@ -6,9 +6,7 @@ E-Commerce Cart & Checkout Module
 
 ## Base URL
 
-
 http://localhost:8080
-
 
 ---
 
@@ -18,38 +16,160 @@ This project does not implement authentication or authorization. All APIs are pu
 
 ---
 
-# 1. Add Product To Cart
+# USER APIs
 
-## Endpoint
+## Create User
 
+### Endpoint
+
+POST /api/users
+
+### Request Body
+
+```json
+{
+  "name": "Poorvika",
+  "email": "poorvika@gmail.com"
+}
+```
+
+### Success Response
+
+```json
+{
+  "message": "User created successfully",
+  "data": {
+    "id": 1,
+    "name": "Poorvika",
+    "email": "poorvika@gmail.com"
+  }
+}
+```
+
+---
+
+## Get All Users
+
+### Endpoint
+
+GET /api/users
+
+### Success Response
+
+```json
+{
+  "message": "Users fetched successfully",
+  "data": [
+    {
+      "id": 1,
+      "name": "Poorvika",
+      "email": "poorvika@gmail.com"
+    }
+  ]
+}
+```
+
+---
+
+## Get User By Id
+
+### Endpoint
+
+GET /api/users/{id}
+
+### Example
+
+GET /api/users/1
+
+### Status Codes
+
+| Code | Description    |
+| ---- | -------------- |
+| 200  | Success        |
+| 404  | User Not Found |
+
+---
+
+# PRODUCT APIs
+
+## Create Product
+
+### Endpoint
+
+POST /api/products
+
+### Request Body
+
+```json
+{
+  "name": "Laptop",
+  "price": 50000,
+  "stockQuantity": 10
+}
+```
+
+### Success Response
+
+```json
+{
+  "message": "Product created successfully"
+}
+```
+
+---
+
+## Get All Products
+
+### Endpoint
+
+GET /api/products
+
+### Status Codes
+
+| Code | Description |
+| ---- | ----------- |
+| 200  | Success     |
+
+---
+
+## Get Product By Id
+
+### Endpoint
+
+GET /api/products/{id}
+
+### Example
+
+GET /api/products/1
+
+### Status Codes
+
+| Code | Description       |
+| ---- | ----------------- |
+| 200  | Success           |
+| 404  | Product Not Found |
+
+---
+
+# CART APIs
+
+## Add Product To Cart
+
+### Endpoint
 
 POST /api/cart/add
 
+### Request Body
 
-## Request Body
-
-
+```json
 {
   "userId": 1,
   "productId": 1,
   "quantity": 2
 }
+```
 
-
-## Success Response
-
-
-{
-  "message": "Product added to cart successfully",
-  "data": {
-    "cartId": 1,
-    "userId": 1,
-    "totalPrice": 100000
-  }
-}
-
-
-## Status Codes
+### Status Codes
 
 | Code | Description                |
 | ---- | -------------------------- |
@@ -60,49 +180,17 @@ POST /api/cart/add
 
 ---
 
-# 2. View Cart
+## View Cart
 
-## Endpoint
-
+### Endpoint
 
 GET /api/cart/user/{userId}
 
-
-## Example
+### Example
 
 GET /api/cart/user/1
 
-
-## Success Response
-
-
-{
-  "message": "Cart fetched successfully",
-  "data": {
-    "cartId": 1,
-    "userId": 1,
-    "totalPrice": 56000,
-    "items": [
-      {
-        "productId": 1,
-        "productName": "Laptop",
-        "quantity": 1,
-        "unitPrice": 50000,
-        "totalPrice": 50000
-      },
-      {
-        "productId": 3,
-        "productName": "Headphones",
-        "quantity": 2,
-        "unitPrice": 3000,
-        "totalPrice": 6000
-      }
-    ]
-  }
-}
-
-
-## Status Codes
+### Status Codes
 
 | Code | Description    |
 | ---- | -------------- |
@@ -111,32 +199,22 @@ GET /api/cart/user/1
 
 ---
 
-# 3. Update Cart Item
+## Update Cart Item
 
-## Endpoint
-
+### Endpoint
 
 PUT /api/cart/update
 
+### Request Body
 
-## Request Body
-
-
+```json
 {
   "cartItemId": 1,
   "quantity": 3
 }
+```
 
-
-## Success Response
-
-
-{
-  "message": "Cart item updated successfully"
-}
-
-
-## Status Codes
+### Status Codes
 
 | Code | Description          |
 | ---- | -------------------- |
@@ -145,94 +223,48 @@ PUT /api/cart/update
 
 ---
 
-# 4. Partial Quantity Update
+## Partial Quantity Update
 
-## Endpoint
-
+### Endpoint
 
 PATCH /api/cart/{cartItemId}/quantity
 
-
-## Example
-
+### Example
 
 PATCH /api/cart/1/quantity?quantity=5
 
-
-## Success Response
-
-
-{
-  "message": "Cart quantity updated successfully"
-}
-
-
 ---
 
-# 5. Remove Cart Item
+## Remove Cart Item
 
-## Endpoint
-
+### Endpoint
 
 DELETE /api/cart/{cartItemId}
 
-
-## Example
-
+### Example
 
 DELETE /api/cart/1
 
-
-## Success Response
-
-
-{
-  "message": "Cart item removed successfully",
-  "data": "Deleted"
-}
-
-
-## Status Codes
-
-| Code | Description          |
-| ---- | -------------------- |
-| 200  | Deleted Successfully |
-| 404  | Cart Item Not Found  |
-
 ---
 
-# 6. Apply Coupon
+# COUPON APIs
 
-## Endpoint
+## Apply Coupon
 
+### Endpoint
 
 POST /api/coupons/apply
 
+### Request Body
 
-## Request Body
-
-
+```json
 {
   "userId": 1,
   "couponCode": "SAVE10"
 }
+```
 
-
-## Success Response
-
-
-{
-  "message": "Coupon applied successfully",
-  "data": {
-    "couponCode": "SAVE10",
-    "totalAmount": 5000,
-    "discountAmount": 500,
-    "finalAmount": 4500
-  }
-}
-
-
-## Status Codes
+### Status Codes
 
 | Code | Description      |
 | ---- | ---------------- |
@@ -243,56 +275,25 @@ POST /api/coupons/apply
 
 ---
 
-# 7. Checkout
+# CHECKOUT APIs
 
-## Endpoint
+## Checkout
+
+### Endpoint
 
 POST /api/checkout
 
+### Request Body
 
-## Request Body
-
-
+```json
 {
   "userId": 1,
   "couponCode": "SAVE10",
   "paymentMode": "UPI"
 }
+```
 
-
-## Success Response
-
-
-{
-  "message": "Checkout completed",
-  "data": {
-    "orderId": 1,
-    "status": "SUCCESS",
-    "totalAmount": 5000,
-    "discountAmount": 500,
-    "finalAmount": 4500,
-    "message": "Payment successful. Order created."
-  }
-}
-
-
-## Payment Failure Response
-
-
-{
-  "message": "Checkout completed",
-  "data": {
-    "orderId": 2,
-    "status": "FAILED",
-    "totalAmount": 150000,
-    "discountAmount": 0,
-    "finalAmount": 150000,
-    "message": "Payment failed."
-  }
-}
-
-
-## Status Codes
+### Status Codes
 
 | Code | Description        |
 | ---- | ------------------ |
@@ -304,45 +305,37 @@ POST /api/checkout
 
 ---
 
-# 8. Get Order History
+# ORDER APIs
 
-## Endpoint
+## Get All Orders
 
+### Endpoint
 
-GET /api/orders/user/{userId}
+GET /api/orders
 
+### Example
 
-## Example
+GET /api/orders?page=0&size=5
 
-GET /api/orders/user/1?page=0&size=5
+### Status Codes
 
+| Code | Description |
+| ---- | ----------- |
+| 200  | Success     |
 
-## Success Response
+---
 
+## Get Order History By User Id
 
-{
-  "message": "Order history fetched successfully",
-  "data": {
-    "content": [
-      {
-        "orderId": 1,
-        "userId": 1,
-        "totalAmount": 5000,
-        "discountAmount": 500,
-        "finalAmount": 4500,
-        "status": "SUCCESS",
-        "createdAt": "2026-06-22T10:15:00"
-      }
-    ],
-    "totalElements": 1,
-    "totalPages": 1,
-    "size": 5,
-    "number": 0
-  }
-}
+### Endpoint
 
+GET /api/orders/user/{userId}/all
 
-## Status Codes
+### Example
+
+GET /api/orders/user/1/all
+
+### Status Codes
 
 | Code | Description    |
 | ---- | -------------- |
@@ -351,46 +344,17 @@ GET /api/orders/user/1?page=0&size=5
 
 ---
 
-# 9. Get Order By ID
+## Get Order By Id
 
-## Endpoint
-
+### Endpoint
 
 GET /api/orders/{orderId}
 
-
-## Example
-
+### Example
 
 GET /api/orders/1
 
-
-## Success Response
-
-
-{
-  "message": "Order fetched successfully",
-  "data": {
-    "orderId": 1,
-    "userId": 1,
-    "totalAmount": 5000,
-    "discountAmount": 500,
-    "finalAmount": 4500,
-    "status": "SUCCESS",
-    "createdAt": "2026-06-22T10:15:00",
-    "items": [
-      {
-        "productId": 1,
-        "productName": "Laptop",
-        "quantity": 1,
-        "price": 50000
-      }
-    ]
-  }
-}
-
-
-## Status Codes
+### Status Codes
 
 | Code | Description     |
 | ---- | --------------- |
@@ -401,13 +365,14 @@ GET /api/orders/1
 
 # Global Error Response
 
+```json
 {
   "timestamp": "2026-06-22T11:00:00",
   "status": 404,
   "error": "NOT_FOUND",
   "message": "Order not found with id : 100"
 }
-
+```
 
 ---
 
@@ -422,25 +387,39 @@ GET /api/orders/1
 
 ---
 
+# Database Tables
+
+* Users
+* Products
+* Carts
+* Cart_Items
+* Orders
+* Order_Items
+* Coupons
+
+---
+
 # Business Workflow
 
 1. User adds products to cart.
 2. User views cart.
 3. User updates or removes cart items.
 4. User applies a coupon.
-5. System validates available inventory.
-6. Checkout process begins.
+5. System validates inventory.
+6. Checkout begins.
 7. Order is created with PENDING status.
-8. Payment simulation is executed.
-9. If payment succeeds:
+8. Payment simulation executes.
+9. On SUCCESS:
 
-   * Inventory is reduced.
-   * Cart is cleared.
-   * Order status becomes SUCCESS.
-10. If payment fails:
+   * Inventory reduced.
+   * Cart cleared.
+   * Order marked SUCCESS.
+10. On FAILURE:
 
-    * Order status becomes FAILED.
-11. User can retrieve order history and order details.
+* Inventory restored.
+* Order marked FAILED.
+
+11. User retrieves order history and order details.
 
 ---
 
